@@ -1,9 +1,9 @@
 {
   "theme": {
-    "slug": "healinghearts",
-    "name": "Healing HeARTS",
+    "slug": "wprig-healinghearts",
+    "name": "wprig-Healing HeARTS",
     "author": "Tim JK Strickland",
-    "PHPNamespace": "WP_Rig\\WP_Rig"
+    "PHPNamespace": "Healing_Hearts\\Healing_Hearts"
   },
   "dev": {
     "browserSync": {
