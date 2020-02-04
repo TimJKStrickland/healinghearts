@@ -25,6 +25,7 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
+@import "_utils.css";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -83,7 +84,8 @@
 		display: grid;
 		grid-template-columns: 3fr 1fr;
 		grid-gap: 2rem;
-		justify-content: center;
+		-webkit-box-pack: center;
+		        justify-content: center;
 	}
 
 	.site-header {
@@ -210,10 +212,12 @@ select {
 	display: block;
 	margin: 0 auto;
 }
-
+.custom-logo {
+	max-width: 125px;
+}
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 0;
 }
 
 .site-branding {
@@ -293,7 +297,9 @@ select {
 		display: none;
 		position: absolute;
 		top: 100%;
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		        flex-direction: column;
 		background: #fff;
 		margin-left: 0;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -315,7 +321,8 @@ select {
 		padding: 0;
 		border: none;
 		border-radius: 0;
-		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
 		overflow: visible;
 	}
 
@@ -329,7 +336,8 @@ select {
 		height: 60%;
 		border: solid #000;
 		border-width: 0 2px 2px 0;
-		transform: translateY(-50%) rotate(45deg);
+		-webkit-transform: translateY(-50%) rotate(45deg);
+		        transform: translateY(-50%) rotate(45deg);
 	}
 
 	.nav--toggle-sub ul ul .dropdown,
@@ -339,7 +347,8 @@ select {
 	}
 
 	.nav--toggle-sub ul ul .dropdown-symbol {
-		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		        transform: rotate(-45deg);
 	}
 
 	.nav--toggle-sub .dropdown-toggle:hover,
@@ -381,10 +390,13 @@ select {
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	margin: 0 auto 2em;
-	padding: 0 1em;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+					flex-direction: row;
+	align-items: center;
+	margin: 0 auto;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
@@ -392,10 +404,10 @@ select {
 
 .main-navigation a {
 	display: block;
-	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
-	color: #000;
+	color: --color-link;
+	font-weight: bold
 }
 
 .main-navigation a:hover,
@@ -417,6 +429,7 @@ select {
 @media (--wide-menu-query) {
 
 	.main-navigation ul li a {
+		color: (--blue);
 		padding: 0.4em 0.5em;
 	}
 
@@ -451,9 +464,11 @@ select {
 	}
 
 	.main-navigation .menu {
+		display: -webkit-box;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		-webkit-box-pack: end;
+		        justify-content: flex-end;
 	}
 }
 
@@ -485,6 +500,7 @@ select {
 }
 
 .nav-links {
+	display: -webkit-box;
 	display: flex;
 }
 
@@ -492,14 +508,16 @@ select {
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
 	width: 50%;
-	flex: 1 0 50%;
+	-webkit-box-flex: 1;
+	        flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
 	text-align: end;
-	flex: 1 0 50%;
+	-webkit-box-flex: 1;
+	        flex: 1 0 50%;
 }
 
 .post-navigation-sub span {
@@ -513,7 +531,8 @@ select {
 }
 
 .pagination .nav-links {
-	justify-content: center;
+	-webkit-box-pack: center;
+	        justify-content: center;
 	flex-wrap: wrap;
 }
 

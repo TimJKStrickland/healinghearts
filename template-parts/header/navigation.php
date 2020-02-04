@@ -36,6 +36,8 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 	}
 	?>
 
+	<?php the_custom_logo() ?>
+
 	<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'wp-rig' ); ?>" aria-controls="primary-menu" aria-expanded="false"
 		<?php
 		if ( wp_rig()->is_amp() ) {
@@ -49,7 +51,7 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 		<?php esc_html_e( 'Menu', 'wp-rig' ); ?>
 	</button>
 
-	<div class="primary-menu-container">
+	<div class="primary-menu-container ml-auto">
 		<?php wp_rig()->display_primary_nav_menu( [ 'menu_id' => 'primary-menu' ] ); ?>
 	</div>
 </nav><!-- #site-navigation -->
