@@ -293,12 +293,6 @@
 	font-size: var(--font-size-larger);
 }
 
-/*--------------------------------------------------------------
-## Fix the WooCommerce
---------------------------------------------------------------*/
-
-.woocommerce-notices-wrapper,
-.woocommerce-result-count,
-.woocommerce-ordering {
+.entry-taxonomies {
 	display: none;
 }
